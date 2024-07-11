@@ -25,7 +25,7 @@ import {
   EuiSpacer,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiButton,
+  EuiSmallButton,
   EuiButtonEmpty,
   EuiPage,
   EuiPageBody,
@@ -321,7 +321,7 @@ export const DefineDetector = (props: DefineDetectorProps) => {
             componentType={'DataSourceSelectable'}
             componentConfig={{
               fullWidth: false,
-              activeOption: MDSCreateState.selectedDataSourceId !== undefined 
+              activeOption: MDSCreateState.selectedDataSourceId !== undefined
                 ? [{ id: MDSCreateState.selectedDataSourceId }]
                 : undefined,
               savedObjects: getSavedObjectsClient(),
@@ -432,7 +432,7 @@ export const DefineDetector = (props: DefineDetectorProps) => {
             </EuiFlexItem>
             <EuiFlexItem grow={false}>
               {props.isEdit ? (
-                <EuiButton
+                <EuiSmallButton
                   type="submit"
                   fill={true}
                   data-test-subj="updateDetectorButton"
@@ -442,9 +442,9 @@ export const DefineDetector = (props: DefineDetectorProps) => {
                   }}
                 >
                   Save changes
-                </EuiButton>
+                </EuiSmallButton>
               ) : (
-                <EuiButton
+                <EuiSmallButton
                   type="submit"
                   iconSide="right"
                   iconType="arrowRight"
@@ -457,7 +457,7 @@ export const DefineDetector = (props: DefineDetectorProps) => {
                   }}
                 >
                   Next
-                </EuiButton>
+                </EuiSmallButton>
               )}
             </EuiFlexItem>
           </EuiFlexGroup>

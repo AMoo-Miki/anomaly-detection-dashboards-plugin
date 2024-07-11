@@ -12,7 +12,7 @@
 import {
   //@ts-ignore
   EuiBasicTable,
-  EuiButton,
+  EuiSmallButton,
   EuiComboBoxOptionProps,
   EuiPage,
   EuiPageBody,
@@ -206,8 +206,8 @@ export const DetectorList = (props: ListProps) => {
     selectedIndices: queryParams.indices
       ? queryParams.indices.split(',')
       : ALL_INDICES,
-    selectedDataSourceId: queryParams.dataSourceId === undefined 
-      ? undefined 
+    selectedDataSourceId: queryParams.dataSourceId === undefined
+      ? undefined
       : queryParams.dataSourceId,
   });
 
@@ -245,7 +245,7 @@ export const DetectorList = (props: ListProps) => {
       indices: state.selectedIndices.join(','),
       sortDirection: state.queryParams.sortDirection,
       sortField: state.queryParams.sortField,
-    } as GetDetectorsQueryParams; 
+    } as GetDetectorsQueryParams;
 
     if (dataSourceEnabled) {
       updatedParams = {
@@ -698,7 +698,7 @@ export const DetectorList = (props: ListProps) => {
           componentType={'DataSourceSelectable'}
           componentConfig={{
             fullWidth: false,
-            activeOption: state.selectedDataSourceId !== undefined 
+            activeOption: state.selectedDataSourceId !== undefined
               ? [{ id: state.selectedDataSourceId }]
               : undefined,
             savedObjects: getSavedObjectsClient(),
@@ -735,13 +735,13 @@ export const DetectorList = (props: ListProps) => {
               isStartDisabled={listActionsState.isStartDisabled}
               isStopDisabled={listActionsState.isStopDisabled}
             />,
-            <EuiButton
+            <EuiSmallButton
               data-test-subj="createDetectorButton"
               fill
               href={createDetectorUrl}
             >
               Create detector
-            </EuiButton>,
+            </EuiSmallButton>,
           ]}
         >
           {confirmModal}
